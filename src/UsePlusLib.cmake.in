@@ -58,6 +58,11 @@ IF(NOT PLUSLIB_USE_FILE_INCLUDED)
     FIND_PACKAGE(OpenIGTLinkIO PATHS "@OpenIGTLinkIO_DIR@" NO_MODULE)
   ENDIF()
 
+  SET(PLUS_USE_CanonNCSA @PLUS_USE_CanonNCSA@)
+  IF(PLUS_USE_CanonNCSA)
+    FIND_PACKAGE(CanonNCSA REQUIRED)
+  ENDIF()
+
   IF(PLUS_USE_TextRecognizer)
     SET(tesseract_DIR "@tesseract_DIR@")
     SET(tesseract_DATA_DIR "@tesseract_DATA_DIR@")
