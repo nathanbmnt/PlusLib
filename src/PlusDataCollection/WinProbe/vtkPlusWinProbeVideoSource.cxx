@@ -593,7 +593,6 @@ void vtkPlusWinProbeVideoSource::AdjustBufferSizes()
     m_PrimarySources[i]->Clear(); // clear current buffer content
     m_PrimarySources[i]->SetPixelType(VTK_UNSIGNED_CHAR);
     m_PrimarySources[i]->SetImageType(US_IMG_BRIGHTNESS);
-    m_PrimarySources[i]->SetOutputImageOrientation(US_IMG_ORIENT_MF);
     m_PrimarySources[i]->SetInputImageOrientation(US_IMG_ORIENT_MF);
     m_PrimarySources[i]->SetInputFrameSize(frameSize);
     LOG_INFO("SourceID: " << m_PrimarySources[i]->GetId() << ", "
@@ -621,7 +620,6 @@ void vtkPlusWinProbeVideoSource::AdjustBufferSizes()
       frameSize[0] = m_MWidth;
       m_ExtraSources[i]->SetPixelType(VTK_UNSIGNED_CHAR);
       m_ExtraSources[i]->SetImageType(US_IMG_BRIGHTNESS);
-      m_ExtraSources[i]->SetOutputImageOrientation(US_IMG_ORIENT_MF);
       m_ExtraSources[i]->SetInputImageOrientation(US_IMG_ORIENT_MF);
       if(m_ExtraBuffer.size() != m_MWidth * m_ExtraFrameSize[1])
       {
